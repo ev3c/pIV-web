@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCraft - Joyas Hechas con Componentes de PC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">TechCraft</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Convierte la Tecnología en Arte</h1>
+            <p class="hero-subtitle">Joyas únicas hechas con componentes de ordenador reciclados</p>
+            <a href="#productos" class="btn btn-primary">Explorar Productos</a>
+        </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section class="products-section" id="productos">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <p class="section-subtitle">Cada pieza es única y cuenta una historia tecnológica</p>
+            
+            <!-- Filtros -->
+            <div class="filters">
+                <button class="filter-btn active" data-category="todos">Todos</button>
+                <button class="filter-btn" data-category="llaveros">Llaveros</button>
+                <button class="filter-btn" data-category="colgantes">Colgantes</button>
+                <button class="filter-btn" data-category="pendientes">Pendientes</button>
+                <button class="filter-btn" data-category="pulseras">Pulseras</button>
+            </div>
+
+            <!-- Grid de productos -->
+            <div class="products-grid" id="products-grid">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section class="about-section" id="sobre-nosotros">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre TechCraft</h2>
+                    <p>En TechCraft, transformamos componentes de ordenador obsoletos en piezas de joyería únicas y memorables. Cada artículo es cuidadosamente diseñado y elaborado a mano, dando nueva vida a la tecnología que una vez alimentó nuestros dispositivos.</p>
+                    <p>Nuestro compromiso es con la sostenibilidad, la creatividad y la pasión por la tecnología. Cada pieza es un homenaje a la evolución digital.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">♻️</div>
+                        <h3>Eco-Friendly</h3>
+                        <p>Reciclamos componentes electrónicos</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3>Hecho a Mano</h3>
+                        <p>Cada pieza es única</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>Auténtico</h3>
+                        <p>Componentes reales de PC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <p class="section-subtitle">¿Tienes alguna pregunta? Nos encantaría escucharte</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span>info@techcraft.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span>+34 600 123 456</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>Madrid, España</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 TechCraft. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrito Lateral -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Los items del carrito se cargarán aquí -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">0.00€</span>
+            </div>
+            <button class="btn btn-primary btn-checkout">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- Overlay del carrito -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Modal de producto -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-body" id="modal-body">
+                <!-- Contenido del modal se cargará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
